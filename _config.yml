@@ -1,9 +1,9 @@
-title: Streamdata Gallery
-url: pingometer.api.streamdata.gallery
+title: Streamdata Gallery Pingometer
+url: pingometer.streamdata.gallery
 tag: Pingometer
 markdown: kramdown
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
-github_user: streamdata-gallery-organizations
+github_user: streamdata-gallery
 github_repo: pingometer
 github_branch: master
 collections:
