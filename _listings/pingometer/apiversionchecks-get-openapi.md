@@ -20,7 +20,7 @@ paths:
       summary: Checks
       description: Gets a list of all checks that are visible to you as a user or
         a customer depending on the request context.
-      operationId: -checks-
+      operationId: getChecks
       x-api-path-slug: checks-get
       responses:
         200:
@@ -31,7 +31,7 @@ paths:
     ' get ':
       summary: Checks {checkId}
       description: Gets info about a check, current SLA, last result and its status.
-      operationId: -checks-checkid-
+      operationId: getChecksCheck
       x-api-path-slug: checkscheckid-get
       responses:
         200:
@@ -41,7 +41,7 @@ paths:
     ' put ':
       summary: Checks {checkId}
       description: Updates a check.
-      operationId: -checks-checkid-
+      operationId: putChecksCheck
       x-api-path-slug: checkscheckid-put
       responses:
         200:
@@ -51,7 +51,7 @@ paths:
     ' delete ':
       summary: Checks {checkId}
       description: Deletes a check.
-      operationId: -checks-checkid-
+      operationId: deleteChecksCheck
       x-api-path-slug: checkscheckid-delete
       responses:
         200:
@@ -62,41 +62,30 @@ paths:
     ' get ':
       summary: Checks {checkId} Lastvalue
       description: Gets the absolute last value of a specific check.
-      operationId: -checks-checkid-lastvalue-
+      operationId: getChecksCheckLastvalue
       x-api-path-slug: checkscheckidlastvalue-get
       responses:
         200:
           description: OK
       tags:
       - Checks
-  '/checks/{checkId}/results/{millisecondsUtc}?detail_level={detail_level} ':
+  /checks/{checkId}/results/{millisecondsUtc}:
     ' get ':
       summary: Checks {checkId} Results {millisecondsUtc}?detail_level={detail_level}
       description: Gets a specific check result by a numeric java timestamp.
-      operationId: -checks-checkid-results-millisecondsutcdetail-leveldetail-level-
-      x-api-path-slug: checkscheckidresultsmillisecondsutcdetail-leveldetail-level-get
+      operationId: getChecksCheckResultsMillisecondsutcDetailLevelDetailLevel
+      x-api-path-slug: checkscheckidresultsmillisecondsutc-get
       responses:
         200:
           description: OK
       tags:
       - Checks
-  '/checks/{checkId}/results?mostrecent={mostrecent}&amp;detail_level={detail_level} ':
-    ' get ':
-      summary: Checks {checkId} Results?mostrecent={mostrecent}&amp;detail_level={detail_level}
-      description: Gets the most recent check results.
-      operationId: -checks-checkid-resultsmostrecentmostrecentampdetail-leveldetail-level-
-      x-api-path-slug: checkscheckidresultsmostrecentmostrecentampdetail-leveldetail-level-get
-      responses:
-        200:
-          description: OK
-      tags:
-      - Checks
-  '/checks/{checkId}/results?fromUtc={fromUtc}&amp;toUtc={toUtc}&amp;detail_level={detail_level} ':
+  /checks/{checkId}/results:
     ' get ':
       summary: Checks {checkId} Results?fromUtc={fromUtc}&amp;toUtc={toUtc}&amp;detail_level={detail_level}
       description: Gets check results between two dates.
-      operationId: -checks-checkid-resultsfromutcfromutcamptoutctoutcampdetail-leveldetail-level-
-      x-api-path-slug: checkscheckidresultsfromutcfromutcamptoutctoutcampdetail-leveldetail-level-get
+      operationId: getChecksCheckResultsFromutcFromutc&amp;toutcToutc&amp;detailLevelDetailLevel
+      x-api-path-slug: checkscheckidresults-get
       responses:
         200:
           description: OK
@@ -110,7 +99,9 @@ paths:
           get
     : summary: Get Check List
       description: Returns a list overview of all checks.
-      operationId: get-check-list
+      operationId: |2-
+
+        getApiVersionChecks
       x-api-path-slug: apiversionchecks-get
       parameters:
       - in: query
@@ -135,16 +126,16 @@ paths:
       tags:
       - Checks
 x-streamrank:
-  polling_total_time_average: 0
-  polling_size_download_average: 0
-  streaming_total_time_average: 0
-  streaming_size_download_average: 0
-  change_yes: 0
-  change_no: 0
-  time_percentage: 0
-  size_percentage: 0
-  change_percentage: 0
-  last_run: ""
-  days_run: 0
-  minute_run: 0
+  polling_total_time_average: "0"
+  polling_size_download_average: "0"
+  streaming_total_time_average: "0"
+  streaming_size_download_average: "0"
+  change_yes: "0"
+  change_no: "0"
+  time_percentage: "0"
+  size_percentage: "0"
+  change_percentage: "200"
+  last_run: ~
+  days_run: "0"
+  minute_run: "0"
 ---

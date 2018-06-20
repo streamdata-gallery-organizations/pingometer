@@ -7,8 +7,8 @@ image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/18847-ping
 x-kinRank: "8"
 x-alexaRank: "1382804"
 tags: Pingometer
-created: "2018-05-22"
-modified: "2018-05-22"
+created: "2018-06-20"
+modified: "2018-06-20"
 url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/apis.md
 specificationVersion: "0.14"
 apis:
@@ -123,14 +123,14 @@ apis:
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/alertstargets-get-openapi.md
 - name: Alerts API Deleting an alert
   x-api-slug: alerts-api
-  description: ""
+  description: Deleting an alert
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/18847-pingometer.jpg
   humanURL: https://pingometer.com/
   baseURL: ://api.serverdensity.io.///alerts/configs/alertId
   tags: Alerts
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/alertsconfigsalertid--openapi.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/alertsconfigsalertid-delete-openapi.md
 - name: Alerts API Listing alerts by subject
   x-api-slug: alerts-api
   description: Get a list of all configured alerts for a specific subject (device
@@ -141,7 +141,7 @@ apis:
   tags: Alerts
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/alertsconfigssubjectid--openapi.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/alertsconfigssubjectid-get-openapi.md
 - name: Alerts API Triggered alerts
   x-api-slug: alerts-api
   description: Get a list of all triggered alerts on your account, per subject (device
@@ -152,7 +152,7 @@ apis:
   tags: Alerts
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/alertstriggered--openapi.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/alertstriggered-get-openapi.md
 - name: Alerts API
   x-api-slug: alerts-api
   description: Pingometer is a service that monitors the uptime, downtime, and performance
@@ -224,31 +224,31 @@ apis:
   description: Gets a specific check result by a numeric java timestamp.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/18847-pingometer.jpg
   humanURL: https://pingometer.com/
-  baseURL: 'https://api.pingdom.com////checks/{checkId}/results/{millisecondsUtc}?detail_level={detail_level} '
+  baseURL: https://api.pingdom.com////checks/{checkId}/results/{millisecondsUtc}
   tags: Checks
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/checkscheckidresultsmillisecondsutcdetail-leveldetail-level-get-openapi.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/checkscheckidresultsmillisecondsutc-get-openapi.md
 - name: Checks API Checks {checkId} Results?mostrecent={mostrecent}&amp;detail_level={detail_level}
   x-api-slug: checks-api
   description: Gets the most recent check results.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/18847-pingometer.jpg
   humanURL: https://pingometer.com/
-  baseURL: 'https://api.pingdom.com////checks/{checkId}/results?mostrecent={mostrecent}&amp;detail_level={detail_level} '
+  baseURL: https://api.pingdom.com////checks/{checkId}/results
   tags: Checks
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/checkscheckidresultsmostrecentmostrecentampdetail-leveldetail-level-get-openapi.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/checkscheckidresults-get-openapi.md
 - name: Checks API Checks {checkId} Results?fromUtc={fromUtc}&amp;toUtc={toUtc}&amp;detail_level={detail_level}
   x-api-slug: checks-api
   description: Gets check results between two dates.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/18847-pingometer.jpg
   humanURL: https://pingometer.com/
-  baseURL: 'https://api.pingdom.com////checks/{checkId}/results?fromUtc={fromUtc}&amp;toUtc={toUtc}&amp;detail_level={detail_level} '
+  baseURL: https://api.pingdom.com////checks/{checkId}/results
   tags: Checks
   properties:
   - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/checkscheckidresultsfromutcfromutcamptoutctoutcampdetail-leveldetail-level-get-openapi.md
+    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingometer/master/_listings/pingometer/checkscheckidresults-get-openapi.md
 - name: Checks API Get Check List
   x-api-slug: checks-api
   description: Returns a list overview of all checks.

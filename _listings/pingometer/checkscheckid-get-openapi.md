@@ -20,7 +20,7 @@ paths:
       summary: Checks
       description: Gets a list of all checks that are visible to you as a user or
         a customer depending on the request context.
-      operationId: -checks-
+      operationId: getChecks
       x-api-path-slug: checks-get
       responses:
         200:
@@ -31,7 +31,7 @@ paths:
     ' get ':
       summary: Checks {checkId}
       description: Gets info about a check, current SLA, last result and its status.
-      operationId: -checks-checkid-
+      operationId: getChecksCheck
       x-api-path-slug: checkscheckid-get
       responses:
         200:

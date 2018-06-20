@@ -20,7 +20,7 @@ paths:
       summary: Checks
       description: Gets a list of all checks that are visible to you as a user or
         a customer depending on the request context.
-      operationId: -checks-
+      operationId: getChecks
       x-api-path-slug: checks-get
       responses:
         200:
@@ -31,7 +31,7 @@ paths:
     ' get ':
       summary: Checks {checkId}
       description: Gets info about a check, current SLA, last result and its status.
-      operationId: -checks-checkid-
+      operationId: getChecksCheck
       x-api-path-slug: checkscheckid-get
       responses:
         200:
@@ -41,7 +41,7 @@ paths:
     ' put ':
       summary: Checks {checkId}
       description: Updates a check.
-      operationId: -checks-checkid-
+      operationId: putChecksCheck
       x-api-path-slug: checkscheckid-put
       responses:
         200:
@@ -51,7 +51,7 @@ paths:
     ' delete ':
       summary: Checks {checkId}
       description: Deletes a check.
-      operationId: -checks-checkid-
+      operationId: deleteChecksCheck
       x-api-path-slug: checkscheckid-delete
       responses:
         200:
@@ -62,7 +62,7 @@ paths:
     ' get ':
       summary: Checks {checkId} Lastvalue
       description: Gets the absolute last value of a specific check.
-      operationId: -checks-checkid-lastvalue-
+      operationId: getChecksCheckLastvalue
       x-api-path-slug: checkscheckidlastvalue-get
       responses:
         200:
