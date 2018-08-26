@@ -17,7 +17,7 @@ consumes:
 paths:
   '/checks ':
     ' get ':
-      summary: Checks
+      summary: Get Checks
       description: Gets a list of all checks that are visible to you as a user or
         a customer depending on the request context.
       operationId: getChecks
@@ -29,7 +29,7 @@ paths:
       - Checks
   '/checks/{checkId} ':
     ' get ':
-      summary: Checks {checkId}
+      summary: Get Check
       description: Gets info about a check, current SLA, last result and its status.
       operationId: getChecksCheck
       x-api-path-slug: checkscheckid-get
@@ -39,7 +39,7 @@ paths:
       tags:
       - Checks
     ' put ':
-      summary: Checks {checkId}
+      summary: Update Check
       description: Updates a check.
       operationId: putChecksCheck
       x-api-path-slug: checkscheckid-put
@@ -49,7 +49,7 @@ paths:
       tags:
       - Checks
     ' delete ':
-      summary: Checks {checkId}
+      summary: Delete Check
       description: Deletes a check.
       operationId: deleteChecksCheck
       x-api-path-slug: checkscheckid-delete
@@ -60,7 +60,7 @@ paths:
       - Checks
   '/checks/{checkId}/lastvalue ':
     ' get ':
-      summary: Checks {checkId} Lastvalue
+      summary: Get Checks Lastvalue
       description: Gets the absolute last value of a specific check.
       operationId: getChecksCheckLastvalue
       x-api-path-slug: checkscheckidlastvalue-get
@@ -71,7 +71,7 @@ paths:
       - Checks
   /checks/{checkId}/results/{millisecondsUtc}:
     ' get ':
-      summary: Checks {checkId} Results {millisecondsUtc}?detail_level={detail_level}
+      summary: Get Checks Results
       description: Gets a specific check result by a numeric java timestamp.
       operationId: getChecksCheckResultsMillisecondsutcDetailLevelDetailLevel
       x-api-path-slug: checkscheckidresultsmillisecondsutc-get
@@ -82,9 +82,9 @@ paths:
       - Checks
   /checks/{checkId}/results:
     ' get ':
-      summary: Checks {checkId} Results?fromUtc={fromUtc}&amp;toUtc={toUtc}&amp;detail_level={detail_level}
-      description: Gets check results between two dates.
-      operationId: getChecksCheckResultsFromutcFromutc&amp;toutcToutc&amp;detailLevelDetailLevel
+      summary: Get Checks Results
+      description: Gets the most recent check results.
+      operationId: getChecksCheckResultsMostrecentMostrecent&amp;detailLevelDetailLevel
       x-api-path-slug: checkscheckidresults-get
       responses:
         200:
