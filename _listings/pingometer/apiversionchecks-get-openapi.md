@@ -7,7 +7,6 @@ info:
   description: Returns a list overview of all checks.
   version: 1.0.0
 host: api.pingdom.com
-basePath: /
 schemes:
 - http
 produces:
@@ -15,9 +14,212 @@ produces:
 consumes:
 - application/json
 paths:
+  ? '/alerts?check_id={check_id}&amp;severity={severity}&amp;enabled={enabled}&amp;target_type={target_type}&amp;target_id={target_id} '
+  : ' get ':
+      summary: Alerts
+      description: Gets alerts filtered by set of optional parameters.
+      operationId: -alertscheck-idcheck-idampseverityseverityampenabledenabledamptarget-typetarget-typeamptarget-idtarg
+      x-api-path-slug: alertscheck-idcheck-idampseverityseverityampenabledenabledamptarget-typetarget-typeamptarget-idtarget-id-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  '/alerts/{alert_id} ':
+    ' get ':
+      summary: Alerts
+      description: Gets alert by Id.
+      operationId: -alerts-alert-id-
+      x-api-path-slug: alertsalert-id-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+    ' put ':
+      summary: Alerts
+      description: Updates alert.
+      operationId: -alerts-alert-id-
+      x-api-path-slug: alertsalert-id-put
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+    ' delete ':
+      summary: Alerts
+      description: Deletes alert by Id.
+      operationId: -alerts-alert-id-
+      x-api-path-slug: alertsalert-id-delete
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  '/alerts/{alert_type} ':
+    ' post ':
+      summary: Alerts
+      description: Creates a new alert.
+      operationId: -alerts-alert-type-
+      x-api-path-slug: alertsalert-type-post
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  '/alerts/recipients ':
+    ' get ':
+      summary: Alerts Recipients
+      description: Gets a list of all alert recipient's targets that are visible to
+        you as a customer.
+      operationId: -alerts-recipients-
+      x-api-path-slug: alertsrecipients-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  '/alerts/recipients/{recipient_id} ':
+    ' get ':
+      summary: Alerts Recipients
+      description: Gets a information about alert recipient's targets.
+      operationId: -alerts-recipients-recipient-id-
+      x-api-path-slug: alertsrecipientsrecipient-id-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  '/alerts/recipient/{recipient_id} ':
+    ' put ':
+      summary: Alerts Recipient
+      description: Updates recipient along with sms and email targets associated.
+      operationId: -alerts-recipient-recipient-id-
+      x-api-path-slug: alertsrecipientrecipient-id-put
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  '/alerts/recipient ':
+    ' post ':
+      summary: Alerts Recipient
+      description: Creates a new recipient with one sms and one email target associated.
+      operationId: -alerts-recipient-
+      x-api-path-slug: alertsrecipient-post
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  '/alerts/targets ':
+    ' get ':
+      summary: Alerts Targets
+      description: Gets a list of all alert targets that are visible to you as a customer.
+      operationId: -alerts-targets-
+      x-api-path-slug: alertstargets-get
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  /alerts/configs/alertId:
+    delete:
+      summary: Deleting an alert
+      description: Deleting an alert
+      operationId: deleting-an-alert
+      x-api-path-slug: alertsconfigsalertid-delete
+      parameters:
+      - in: path
+        name: alertId
+        description: The ID of the alert to be deleted
+        type: string
+      - in: path
+        name: token
+        description: Your API token
+        type: string
+      - in: body
+        name: token
+        description: Your API token
+        schema:
+          $ref: '#/definitions/holder'
+      - in: query
+        name: token
+        description: Your API token
+        type: string
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  /alerts/configs/subjectId:
+    get:
+      summary: Listing alerts by subject
+      description: Get a list of all configured alerts for a specific subject (device
+        or service).
+      operationId: listing-alerts-by-subject
+      x-api-path-slug: alertsconfigssubjectid-get
+      parameters:
+      - in: path
+        name: subjectId
+        description: The ID of the subject e
+        type: string
+      - in: path
+        name: subjectType
+        description: The type of the subject - device or service
+        type: string
+      - in: query
+        name: subjectType
+        description: The type of the subject - device or service
+        type: string
+      - in: path
+        name: token
+        description: Your API token
+        type: string
+      - in: query
+        name: token
+        description: Your API token
+        type: string
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
+  /alerts/triggered:
+    get:
+      summary: Triggered Alerts
+      description: Get a list of all triggered alerts on your account, per subject
+        (device or service) or per alert config.
+      operationId: triggered-alerts
+      x-api-path-slug: alertstriggered-get
+      parameters:
+      - in: query
+        name: closed
+        description: Whether to filter by closed or open alerts - unset = all alerts,
+          false = open alerts, true = closed alerts
+        type: string
+      - in: query
+        name: filter
+        description: You can provide a JSON encoded hash filter for the search that
+          will return items that match the filter
+        type: string
+      - in: query
+        name: subjectType
+        description: The type of the subject - device, service, deviceGroup or serviceGroup
+          if you also specify the subjectId as part of the URL (see examples below)
+        type: string
+      - in: query
+        name: token
+        description: Your API token
+        type: string
+      responses:
+        200:
+          description: OK
+      tags:
+      - Alerts
   '/checks ':
     ' get ':
-      summary: Checks
+      summary: Get Checks
       description: Gets a list of all checks that are visible to you as a user or
         a customer depending on the request context.
       operationId: getChecks
@@ -29,7 +231,7 @@ paths:
       - Checks
   '/checks/{checkId} ':
     ' get ':
-      summary: Checks {checkId}
+      summary: Get Check
       description: Gets info about a check, current SLA, last result and its status.
       operationId: getChecksCheck
       x-api-path-slug: checkscheckid-get
@@ -39,7 +241,7 @@ paths:
       tags:
       - Checks
     ' put ':
-      summary: Checks {checkId}
+      summary: Update Check
       description: Updates a check.
       operationId: putChecksCheck
       x-api-path-slug: checkscheckid-put
@@ -49,7 +251,7 @@ paths:
       tags:
       - Checks
     ' delete ':
-      summary: Checks {checkId}
+      summary: Delete Check
       description: Deletes a check.
       operationId: deleteChecksCheck
       x-api-path-slug: checkscheckid-delete
@@ -60,7 +262,7 @@ paths:
       - Checks
   '/checks/{checkId}/lastvalue ':
     ' get ':
-      summary: Checks {checkId} Lastvalue
+      summary: Get Checks Lastvalue
       description: Gets the absolute last value of a specific check.
       operationId: getChecksCheckLastvalue
       x-api-path-slug: checkscheckidlastvalue-get
@@ -71,7 +273,7 @@ paths:
       - Checks
   /checks/{checkId}/results/{millisecondsUtc}:
     ' get ':
-      summary: Checks {checkId} Results {millisecondsUtc}?detail_level={detail_level}
+      summary: Get Checks Results
       description: Gets a specific check result by a numeric java timestamp.
       operationId: getChecksCheckResultsMillisecondsutcDetailLevelDetailLevel
       x-api-path-slug: checkscheckidresultsmillisecondsutc-get
@@ -82,9 +284,9 @@ paths:
       - Checks
   /checks/{checkId}/results:
     ' get ':
-      summary: Checks {checkId} Results?fromUtc={fromUtc}&amp;toUtc={toUtc}&amp;detail_level={detail_level}
-      description: Gets check results between two dates.
-      operationId: getChecksCheckResultsFromutcFromutc&amp;toutcToutc&amp;detailLevelDetailLevel
+      summary: Get Checks Results
+      description: Gets the most recent check results.
+      operationId: getChecksCheckResultsMostrecentMostrecent&amp;detailLevelDetailLevel
       x-api-path-slug: checkscheckidresults-get
       responses:
         200:
@@ -125,6 +327,7 @@ paths:
           description: OK
       tags:
       - Checks
+basePath: /
 x-streamrank:
   polling_total_time_average: "0"
   polling_size_download_average: "0"
